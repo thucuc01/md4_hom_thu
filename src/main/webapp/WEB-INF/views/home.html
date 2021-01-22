@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/home}" method="post" th:object="${massager}">
+    <table>
+        <tr>
+            <td><h3> Language : </h3></td>
+            <td>
+                <select th:field="*{language}">
+                    <option th:value="Vietnammes">Vietnammes</option>
+                    <option th:value="English">English</option>
+                    <option th:value="Ghwevkj">Ghwevkj</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><h3>Page Size : </h3></td>
+            <td>Show
+                <select th:field="*{pageSize}">
+                    <option th:type="text" th:value="5" selected>5</option>
+                    <option th:type="text" th:value="10">10</option>
+                    <option th:type="text" th:value="15">15</option>
+                </select>
+            </td>
+
+
+        </tr>
+        <tr>
+            <td>Spam filter : </td>
+            <td> <input th:type="checkbox" th:value="filter" th:field="*{filter}"></td>
+        </tr>
+        <tr>
+            <td>Singnature : </td>
+            <td>
+                <textarea cols="10" rows="4" type="" th:field="*{singnature}">
+                </textarea>
+            </td>
+
+        </tr>
+
+
+
+    </table>
+
+    <input type="submit" value="ok">
+
+</form>
+
+</body>
+</html>
